@@ -12,28 +12,31 @@ public class Records {
 	
 	
 	
+	
+	
+	
+	
 	static int recordNumber =1000;
 	int numberOfRecords = 0;
 	String recordsID;
 	
+	String projectID;
 	String firstName;
 	String lastName;
-	String employeeID;
+	int employeeID;
 	String mailID;
-	String projectID;
-	String clientName;
-	String projectName;
+	Projects project;
 	String location;//US, CA, UK
 	
 	
 	
-	public Records(String recordPrefix ,String firstname, String lastName, String employeeID, String mailID, String projectID, String clientName, String projectName, String location) {
+	public Records(String recordPrefix ,String firstname, String lastName, int employeeID, String mailID, String projectID,String projectClient,String projectName, String location) {
 		
 		//a way to get recordNumber;
 		numberOfRecords++;
 		
 		
-		
+		Projects p = new Projects(projectID, projectClient, projectName);
 		
 		
 		recordsID = recordPrefix+Integer.toString(recordNumber);
@@ -44,16 +47,16 @@ public class Records {
 		this.lastName = lastName;
 		this.employeeID = employeeID;
 		this.mailID = mailID;
-		this.projectID = projectID;
-		this.clientName = clientName;
-		this.projectName = projectName;
+		
+		
+		this.project = p;
 		this.location = location;
 		
 		
 	}
 	
 	
-public Records(String recordPrefix ,String firstname, String lastName, String employeeID, String mailID, String projectID) {
+public Records(String recordPrefix ,String firstname, String lastName, int employeeID, String mailID, String projectID) {
 		
 		//a way to get recordNumber;
 		
@@ -65,8 +68,8 @@ public Records(String recordPrefix ,String firstname, String lastName, String em
 	this.employeeID = employeeID;
 	this.mailID = mailID;
 	this.projectID = projectID;
-	this.clientName = "";
-	this.projectName = "";
+	
+	
 	this.location = "";
 		
 		
@@ -75,14 +78,14 @@ public Records(String recordPrefix ,String firstname, String lastName, String em
 
 public void display() {
 	
-	System.out.println(	recordsID + firstName +	 lastName +	 employeeID + mailID + projectID + clientName + projectName + location);
+	System.out.println(	recordsID + firstName +	 lastName +	 employeeID + mailID + this.project.displayProjects() + location);
 	
 	
 }
 
 public String display_String() {
 	
-	return	recordsID +"  " + firstName +"  " +	 lastName +"  " +	 employeeID +"  " + mailID +"  " + projectID +"  " + clientName +"  " + projectName +"  " + location;
+	return	recordsID +"  " + firstName +"  " +	 lastName +"  " +	 employeeID +"  " + mailID +"  " + this.project.displayProjects() +"  " + location;
 	
 	
 }
@@ -151,5 +154,39 @@ return timeStamp;
 	
 	
 	
+ class Projects {
+	 
+	 String projectID;
+	 String projectClient;
+	 String projectName;
+	 
+	 
+	 Projects(String projectID,  String projectClient ,String projectName ){
+		 
+		 this.projectID = projectID;
+		 this.projectClient = projectClient;
+		 this.projectName =projectName;
+		 
+		 
+	 }
+	 
+	
+	 
+	 public String displayProjects() {
+		 
+		 return this.projectID + " " + this.projectClient + "" + this.projectName;
+		 
+		 
+	 }
+	
+	
+	
+	
+}
+
+
+
+
+
 
 }

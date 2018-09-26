@@ -21,7 +21,7 @@ public class CentralRegistryServer {
 			// code for obtaining RMI port number value omitted
 			RegistryImp exportedObj = new RegistryImp();
 
-			startRegistry(1234);
+			startRegistry(3333);
 			// register the object under the name "registry"
 			registryURL = "rmi://localhost:" + portNum + "/registry";
 			Naming.rebind(registryURL, exportedObj);

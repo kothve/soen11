@@ -14,7 +14,7 @@ public class Database  {
 		
 		HashMap<Character, ArrayList<Records>> database = createHashMap();
 		
-		database.get('m').add(new Records( "MR" , " Bob ", 	" Mercier-Peetz ",	" employeeID " , " mailID ", " projectID ", " clientName ", " projectName " ," location"));
+		database.get('m').add(new Records( "MR" , " Bob ", 	" Mercier-Peetz ",	321321321 , " mailID ", " projectID ", " clientName ", " projectName " ," location"));
 		
 
 		

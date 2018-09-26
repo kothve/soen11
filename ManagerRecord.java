@@ -3,7 +3,7 @@ public class ManagerRecord extends Records {
 
 	String firstName;
 	String lastName;
-	String employeeID;
+	int employeeID;
 	String mailID;
 	String projectID;
 	String clientName;
@@ -15,7 +15,7 @@ public class ManagerRecord extends Records {
 	
 		
 
-public ManagerRecord(String firstname, String lastName, String employeeID, String mailID, String projectID, String clientName, String ProjectName, String location) {
+public ManagerRecord(String firstname, String lastName, int employeeID, String mailID, String projectID, String clientName, String ProjectName, String location) {
 	
 	//recordsID = "MR"+ Integer.toString(recordNumber);
 	
